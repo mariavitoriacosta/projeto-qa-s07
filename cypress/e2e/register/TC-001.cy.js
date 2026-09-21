@@ -9,6 +9,14 @@ describe('TC-001 - Cadastro de usuário com dados válidos', () => {
       password: '12345678'
     }
 
+    cy.request({
+      url: '/api/tags',
+      retryOnNetworkFailure: true,
+      retryOnStatusCodeFailure: true
+    })
+      .its('status')
+      .should('eq', 200)
+
     register.registerUser(user.username, user.email, user.password)
 
     cy.url()
