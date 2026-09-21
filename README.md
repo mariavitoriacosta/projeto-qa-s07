@@ -161,7 +161,7 @@ projeto-qa-s07/
 ├── CODE_OF_CONDUCT.md
 ├── LICENSE
 └── README.md
-
+```
 
 ## Uso de Inteligência Artificial
 
