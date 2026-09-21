@@ -33,6 +33,7 @@ class Article {
 
   publishArticle() {
     cy.contains('button', 'Publish Article')
+      .should('be.visible')
       .click()
 
     cy.url()
@@ -47,6 +48,16 @@ class Article {
     })
 
     cy.contains('button', 'Delete Article')
+      .should('be.visible')
+      .click()
+  }
+
+  commentArticle(comment) {
+    cy.get('textarea[placeholder="Write a comment..."]')
+      .should('be.visible')
+      .type(comment)
+
+    cy.contains('button', 'Post Comment')
       .should('be.visible')
       .click()
   }
