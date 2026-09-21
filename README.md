@@ -144,21 +144,22 @@ npm run start
 
 ## Organização
 
-projeto-qa-s07/ 
-│ 
-├── backend/ # API, regras de negócio e banco 
-│ 
-├── frontend/ # Interface React
-│ 
-├── cypress/ # Testes E2E 
-│ 
-├── cypress.config.js # Configuração do Cypress
-├── vitest.config.js # Configuração do Vitest
-├── package.json # Scripts e dependências do projeto 
-├── package-lock.json 
-├── .gitignore 
-├── CODE_OF_CONDUCT.md 
-├── LICENSE 
+```text
+projeto-qa-s07/
+│
+├── backend/              # API, regras de negócio e banco
+│
+├── frontend/             # Interface React
+│
+├── cypress/              # Testes E2E
+│
+├── cypress.config.js     # Configuração do Cypress
+├── vitest.config.js      # Configuração do Vitest
+├── package.json          # Scripts e dependências do projeto
+├── package-lock.json
+├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── LICENSE
 └── README.md
 
 
