@@ -16,14 +16,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-(async () => {
+const startServer = async () => {
   try {
     await sequelize.sync({ alter: true });
     console.log(`Connection with ${env} database has been established.`);
   } catch (error) {
     console.error("Unable to connect to the database:", error);
+    return;
   }
-})();
+
+  app.listen(PORT, () =>
+    console.log(`Server running on http://localhost:${PORT}`),
+  );
+};
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("../frontend/dist"));
@@ -40,6 +45,4 @@ app.get("*", (req, res) =>
 );
 app.use(errorHandler);
 
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`),
-);
+startServer();

@@ -17,7 +17,7 @@ describe('TC-001 - Cadastro de usuário com dados válidos', () => {
     cy.contains('.nav-item.dropdown', user.username)
       .should('be.visible')
 
-    cy.get('a[href="/#/editor"]')
+    cy.contains('a', 'New Article')
       .should('be.visible')
   })
 })

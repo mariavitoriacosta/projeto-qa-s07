@@ -13,7 +13,12 @@ describe('TC-003 - Criação de artigo com dados válidos', () => {
 
     register.registerUser(author.username, author.email, author.password)
 
-    cy.visit('/#/editor')
+    cy.contains('a', 'New Article')
+      .should('be.visible')
+      .click()
+
+    cy.location('hash')
+      .should('eq', '#/editor')
 
     article.fillArticleForm(
       articleTitle,

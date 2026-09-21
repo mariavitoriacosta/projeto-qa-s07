@@ -19,7 +19,12 @@ describe('TC-005 - Favoritar um artigo', () => {
 
     register.registerUser(author.username, author.email, author.password)
 
-    cy.visit('/#/editor')
+    cy.contains('a', 'New Article')
+      .should('be.visible')
+      .click()
+
+    cy.location('hash')
+      .should('eq', '#/editor')
 
     article.fillArticleForm(
       articleTitle,
@@ -34,12 +39,24 @@ describe('TC-005 - Favoritar um artigo', () => {
 
       register.registerUser(reader.username, reader.email, reader.password)
 
+      cy.url()
+        .should('not.include', '/register')
+
+      cy.contains('.nav-item.dropdown', reader.username)
+        .should('be.visible')
+
       cy.visit(articleUrl)
+
+      cy.contains('.article-page h1', articleTitle)
+        .should('be.visible')
 
       cy.get('.article-page .btn-outline-primary')
         .first()
         .should('not.have.class', 'active')
         .find('.counter')
+        .should(($counter) => {
+          expect($counter.text()).to.match(/\d+/)
+        })
         .invoke('text')
         .then((counterText) => {
           const initialCount = Number(counterText.match(/\d+/)[0])

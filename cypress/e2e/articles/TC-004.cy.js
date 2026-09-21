@@ -14,7 +14,12 @@ describe('TC-004 - Edição de artigo próprio', () => {
 
     register.registerUser(author.username, author.email, author.password)
 
-    cy.visit('/#/editor')
+    cy.contains('a', 'New Article')
+      .should('be.visible')
+      .click()
+
+    cy.location('hash')
+      .should('eq', '#/editor')
 
     article.fillArticleForm(
       articleTitle,
@@ -29,6 +34,10 @@ describe('TC-004 - Edição de artigo próprio', () => {
       .click()
 
     cy.get('input[placeholder="Article Title"]')
+      .should('be.visible')
+
+    cy.get('input[placeholder="Article Title"]')
+      .should('not.be.disabled')
       .clear()
       .type(updatedTitle)
 
