@@ -118,6 +118,22 @@ To run tests, simply run the following command:
 npm run test
 ```
 
+#### Cypress E2E tests
+
+Configure the backend database in `backend/.env`, run the application in one
+terminal, and run Cypress in another:
+
+```bash
+npm install
+npm run dev
+```
+
+```bash
+npm run cy:run
+```
+
+To inspect the scenarios interactively, use `npm run cy:open` instead.
+
 #### Production
 
 The following command will build the production version of the app:
