@@ -134,6 +134,12 @@ npm run cy:run
 
 To inspect the scenarios interactively, use `npm run cy:open` instead.
 
+`npm run cy:run` also generates an HTML execution report (via
+[cypress-mochawesome-reporter](https://github.com/LironEr/cypress-mochawesome-reporter))
+at `cypress/reports/index.html`, with the pass/fail status of every test case
+and screenshots of any failures. Open that file in a browser after the run
+finishes to see the full report.
+
 #### Production
 
 The following command will build the production version of the app:
