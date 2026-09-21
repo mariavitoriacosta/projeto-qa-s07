@@ -142,6 +142,44 @@ The following command will build the production version of the app:
 npm run start
 ```
 
+## Organização
+
+projeto-qa-s07/ 
+│ 
+├── backend/ # API, regras de negócio e banco 
+│ 
+├── frontend/ # Interface React
+│ 
+├── cypress/ # Testes E2E 
+│ 
+├── cypress.config.js # Configuração do Cypress
+├── vitest.config.js # Configuração do Vitest
+├── package.json # Scripts e dependências do projeto 
+├── package-lock.json 
+├── .gitignore 
+├── CODE_OF_CONDUCT.md 
+├── LICENSE 
+└── README.md
+
+
+## Uso de Inteligência Artificial
+
+Durante o desenvolvimento da suíte de testes, foi utilizada Inteligência Artificial como ferramenta de apoio.
+
+A IA foi utilizada principalmente para auxiliar em atividades como:
+
+elaboração e revisão de cenários de teste;
+sugestões de casos positivos e negativos;
+estruturação de testes automatizados;
+esclarecimento sobre utilização do Cypress e Vitest;
+análise e investigação de erros encontrados durante a implementação;
+sugestões de melhoria e organização dos testes.
+
+A utilização da IA teve caráter auxiliar, sendo necessária a análise, adaptação, execução e validação dos testes no contexto real da aplicação.
+
+Dessa forma, os testes foram revisados e executados para verificar se o comportamento implementado correspondia ao funcionamento esperado do sistema.
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
