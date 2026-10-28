@@ -30,11 +30,11 @@ dist
 
 # misc
 .DS_Store
+
+# Arquivos de ambiente
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
 #log files
 npm-debug.log*
