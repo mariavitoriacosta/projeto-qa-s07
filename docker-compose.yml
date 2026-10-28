@@ -1,0 +1,49 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: database_development
+      MYSQL_USER: qa_user
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: qa-backend:latest
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DEV_DB_USERNAME: qa_user
+      DEV_DB_PASSWORD: ${MYSQL_PASSWORD}
+      DEV_DB_HOSTNAME: mysql
+      DEV_DB_NAME: database_development
+      DEV_DB_DIALECT: mysql
+      DEV_DB_LOGGING: "false"
+      JWT_KEY: ${JWT_KEY}
+    ports:
+      - "3001:3001"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: qa-frontend:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

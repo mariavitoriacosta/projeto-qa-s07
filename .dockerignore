@@ -1,0 +1,11 @@
+node_modules
+**/node_modules
+.git
+.env
+**/.env
+coverage
+**/coverage
+dist
+**/dist
+cypress/videos
+cypress/screenshots
