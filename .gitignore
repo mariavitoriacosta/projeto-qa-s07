@@ -9,9 +9,11 @@ node_modules
 coverage
 .nyc_output
 .coverage-vite.log
+.vite-local*.log
 # production
 build
 dist
+artifacts/
 
 # IDEs and editors
 .idea
