@@ -15,7 +15,7 @@ class User {
       .should('not.include', '/login')
   }
 
-  logout(username) {
+ logout(username) {
   cy.contains(username)
     .click()
 
@@ -23,8 +23,8 @@ class User {
     .should('be.visible')
     .click()
 
-  cy.contains(username)
-    .should('not.exist')
+  cy.contains('a', 'Login')
+    .should('be.visible')
 }
 
   followUser() {
