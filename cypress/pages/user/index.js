@@ -15,14 +15,17 @@ class User {
       .should('not.include', '/login')
   }
 
-  logout(username) {
-    cy.contains(username)
-      .click()
+ logout(username) {
+  cy.contains(username)
+    .click()
 
-    cy.contains('a', 'Logout')
-      .should('be.visible')
-      .click()
-  }
+  cy.contains('a', 'Logout')
+    .should('be.visible')
+    .click()
+
+  cy.contains('a', 'Login')
+    .should('be.visible')
+}
 
   followUser() {
     cy.get('button.action-btn')
