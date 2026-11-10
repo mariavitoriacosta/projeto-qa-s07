@@ -51,6 +51,7 @@
     "concurrently": "^7.6.0",
     "cypress": "^16.1.0",
     "cypress-mochawesome-reporter": "^5.0.0",
+    "jsdom": "^22.1.0",
     "nyc": "^18.0.0",
     "vite-plugin-istanbul": "^6.0.2",
     "vitest": "^0.29.7"
