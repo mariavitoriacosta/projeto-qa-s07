@@ -646,10 +646,8 @@ Os exemplos abaixo foram extraídos da interação usada como apoio a esta etapa
 
 | Prompt real | Como a resposta foi utilizada |
 |---|---|
-| “voce me ajudar a rodar esse projeto?” | Utilizada para orientar a execução e o diagnóstico. A orientação foi ajustada ao constatar que os containers já estavam ativos; os endpoints foram consultados para identificar o banco vazio. |
-| “eu lembro q antes eu tinha colocado num projeto antigo pra mostrar as etapas quando ia rodando a pipeline, acho q esse aq nao tem isso, como coloco?” | A sugestão de adicionar `pipeline-stage-view` foi aceita e registrada no commit `4fd7f16`, mantendo a instalação por código. |
+| “voce me ajudar a rodar esse projeto?” | Utilizada para orientar a execução e o diagnóstico. A orientação foi ajustada ao constatar que os containers já estavam ativos; os endpoints foram consultados para identificar o banco vazio. 
 | “voce pode verificar se o meu projeto cumpre todos os requisitos do professor no pdf” | Utilizada como checklist de revisão do código, documentação, publicação da imagem e evidências de execução. O checklist não substitui a avaliação do professor. |
-| “uma duvida, a pipeline tem umas estapas com muitos codigos, nao seria boa pratica separar esses codigos em arquivos menores? de algumas etapas” | A resposta sugeriu extrair blocos longos para scripts. A refatoração não foi aplicada na versão utilizada para esta documentação; os blocos continuam no Jenkinsfile. |
 
 Uma orientação de colar a implementação da pipeline no campo de script da interface foi descartada após a leitura do enunciado. O fluxo documentado usa checkout por SCM e etapas no Jenkinsfile.
 
