@@ -1,10 +1,6 @@
 services:
   jenkins:
-    build:
-      context: .
-      dockerfile: infra/jenkins/Dockerfile
-
-    image: projeto-qa-s07-jenkins:local
+    image: juliavicentini/projeto-qa-s07-jenkins:latest
 
     restart: unless-stopped
 
