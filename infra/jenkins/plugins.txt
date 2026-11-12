@@ -5,3 +5,4 @@ junit:1442.vb_b_a_467df2767
 htmlpublisher:429
 plain-credentials:199.v9f8e1f741799
 timestamper
+pipeline-stage-view:2.41
